@@ -4,6 +4,7 @@ import {exposeAnchors} from './transforms/expose-anchors.js';
 import {extractPrefix} from './transforms/extract-prefix.js';
 import {extractPrefix2} from './transforms/extract-prefix-2.js';
 import {extractSuffix} from './transforms/extract-suffix.js';
+import {extractSuffix2} from './transforms/extract-suffix-2.js';
 import {mergeRanges} from './transforms/merge-ranges.js';
 import {optionalize} from './transforms/optionalize.js';
 import {preventReDoS} from './transforms/prevent-redos.js';
@@ -24,6 +25,7 @@ type OptimizationName =
   'extractPrefix' |
   'extractPrefix2' |
   'extractSuffix' |
+  'extractSuffix2' |
   'mergeRanges' |
   'optionalize' |
   'preventReDoS' |
@@ -44,6 +46,7 @@ const optimizations = new Map<OptimizationName, Visitor>([
   ['extractPrefix', extractPrefix],
   ['extractPrefix2', extractPrefix2],
   ['extractSuffix', extractSuffix],
+  ['extractSuffix2', extractSuffix2],
   ['optionalize', optionalize],
   ['preventReDoS', preventReDoS],
   ['removeEmptyGroups', removeEmptyGroups],
